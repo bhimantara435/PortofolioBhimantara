@@ -9,9 +9,9 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 import App from "./App.jsx";
-import Navbar from "./components/navbar.jsx";
-import Footer from "./components/footer.jsx";
-import PreLoader from "./components/preloader.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import PreLoader from "./components/PreLoader.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
