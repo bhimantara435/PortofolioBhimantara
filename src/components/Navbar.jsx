@@ -97,7 +97,7 @@ const Navbar = () => {
 <button
   type="button"
   onClick={toggleTheme}
-  className="hidden h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 md:grid"
+  className="theme-toggle-btn hidden h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400 md:grid"
   aria-label="Toggle theme"
 >
   {theme === "dark" ? (
