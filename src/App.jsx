@@ -67,7 +67,7 @@ useEffect(() => {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="/assets/CV Muhammad Bhimantara Wira Eka Putra -- (1).pdf"
+                  href="/assets/CV_Muhammad_Bhimantara_Wira_Eka_Putra.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-primary"
