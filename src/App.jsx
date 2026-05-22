@@ -1,230 +1,299 @@
-import DataImage from "./data";
-import { listTools, listProyek } from "./data";
+import { FaArrowRight, FaDownload, FaEnvelope, FaGithub } from "react-icons/fa";
+import { listProyek, listSertifikat, listTools, socialLinks } from "./data";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
-        <div className="animate__animated animate__fadeInUp animate__delay-3s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            <img
-              src={DataImage.HeroImage}
-              alt="Hero Image"
-              className="w-10 rounded-md" loading="lazy"
-            />
-            <q>Kode yang indah, lahir dari ketekunan.😊😊</q>
-          </div>
+    <main className="overflow-hidden bg-[#050816] text-white">
+      <section id="beranda" className="section-padding pt-36">
+        <div className="container">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <div className="mb-6 flex gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
+                    >
+                      <Icon />
+                    </a>
+                  );
+                })}
+              </div>
 
-          <h1 className="text-5xl/tight font-bold mb-6">
-            Selamat Datang di Dunia Koding!
-          </h1>
+              <p className="mb-4 inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-300">
+                UI/UX Designer • Front-End Developer • IT Enthusiast
+              </p>
 
-          <p className="text-base/loose mb-6 opacity-50">
-            Saya, Muhammad Bhimantara Wira Eka Putra, lulusan SMKN 1 Wonorejo
-            jurusan Teknik Komputer dan Jaringan, dan saat ini menempuh studi di
-            Politeknik Negeri Malang pada program D-IV Sistem Informasi Bisnis.
-            Saya memiliki kemampuan di bidang jaringan komputer dan teknologi
-            informasi, termasuk troubleshooting, konfigurasi, dan instalasi
-            jaringan. Saya juga dikenal sebagai pribadi yang bermotivasi tinggi,
-            komunikatif, bertanggung jawab, memiliki manajemen waktu yang baik,
-            serta mampu bekerja sama dengan baik dalam tim maupun secara mandiri.
-          </p>
+              <h1 className="max-w-3xl text-5xl font-black leading-tight md:text-7xl">
+                Hi, Saya <br />
+                <span className="gradient-text">Bhimantara</span>
+              </h1>
 
-          <div className="flex items-center sm:gap-4 gap-2">
-            <a
-              href="#"
-              className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600"
-            >
-              Lihat CV <i className="ri-download-2-line ri-lg"></i>
-            </a>
-            <a
-              href="#proyek"
-              className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
-            >
-              Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
-            </a>
+              <p className="mt-6 max-w-xl text-base leading-8 text-slate-300">
+                Mahasiswa D-IV Sistem Informasi Bisnis Politeknik Negeri Malang,
+                lulusan Teknik Komputer dan Jaringan, dengan minat pada UI/UX,
+                front-end development, jaringan komputer, dan pengembangan
+                sistem digital.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="/assets/CV Muhammad Bhimantara Wira Eka Putra -- (1).pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  <FaDownload /> Lihat CV
+                </a>
+
+                <a href="#proyek" className="btn-secondary">
+                  Lihat Proyek <FaArrowRight />
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-full bg-cyan-500/20 blur-3xl"></div>
+              <div className="relative rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl">
+                <img
+                  src="/assets/WhatsApp Image 2026-05-22 at 1.49.55 PM.jpeg"
+                  alt="Bhimantara"
+                  className="h-[460px] w-full rounded-[1.5rem] object-cover object-top"
+                />
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <img
-          src={DataImage.HeroImage}
-          alt="Hero Image"
-          className="w-[500px] md:ml-auto animate__animated animate__fadeInUp animate__delay-4s" loading="lazy"
-        />
-      </div>
+      <section id="tentang" className="section-padding">
+        <div className="container">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="glass-card">
+              <p className="section-subtitle">Tentang Saya</p>
+              <h2 className="section-title">
+                Mengenal <span className="gradient-text">Bhimantara</span>
+              </h2>
+              <p className="mt-5 leading-8 text-slate-300">
+                Saya memiliki kemampuan di bidang jaringan komputer dan
+                teknologi informasi, termasuk troubleshooting, konfigurasi, dan
+                instalasi jaringan. Saya juga terbiasa bekerja dalam tim,
+                bertanggung jawab, komunikatif, serta memiliki ketertarikan pada
+                desain antarmuka dan pengembangan website.
+              </p>
 
-      {/* Tentang Saya */}
-      <div>
-        <div className="Tentang mt-32 py-10" id="tentang">
-          <div className="xl:w-2/3 lg:w-3/4 w:full mx-auto p-7 bg-zinc-800 rounded-lg" div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <img
-              src={DataImage.HeroImage}
-              alt="Image"
-              className="w-12 rounded-md mb-10 sm:hidden" loading="lazy"
-            />
-            <p className="text-base/loose mb-10">
-              Muhammad Bhimantara Wira Eka Putra merupakan mahasiswa aktif
-              Program Studi D-IV Sistem Informasi Bisnis di Politeknik Negeri
-              Malang yang memiliki ketertarikan pada bidang teknologi informasi,
-              khususnya jaringan komputer dan pengembangan sistem. Berbekal latar
-              belakang pendidikan Teknik Komputer dan Jaringan, ia memiliki
-              kemampuan dalam troubleshooting, instalasi, serta konfigurasi
-              jaringan. Selama menempuh pendidikan, ia juga terlibat dalam
-              berbagai proyek pengembangan website dengan peran sebagai UI/UX
-              Designer hingga Front-End Developer, yang melatih kemampuan
-              analisis, desain, dan kerja tim. Pengalaman magang di bidang IT dan
-              layanan digital turut memperkuat pemahaman praktisnya terhadap dunia
-              kerja. Selain itu, ia dikenal sebagai pribadi yang komunikatif,
-              bertanggung jawab, dan mampu mengatur waktu dengan baik, baik saat
-              bekerja secara mandiri maupun dalam tim.
-            </p>
-
-            <div className="flex items-center justify-between">
-              <img
-                src={DataImage.HeroImage}
-                alt="Image"
-                className="w-12 rounded-md sm:block hidden" loading="lazy"
-              />
-              <div className="flex item-center gap-6">
-                <div>
-                  <h1 className="text-4xl mb-1">
-                    45<span className="text-violet-500">+</span>
-                  </h1>
-                  <p>Proyek Selesai</p>
+              <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="stat-card">
+                  <h3>4+</h3>
+                  <p>Project</p>
                 </div>
-                <div>
-                  <h1 className="text-4xl mb-1">
-                    4<span className="text-violet-500">+</span>
-                  </h1>
-                  <p>Tahun Pengalaman</p>
+                <div className="stat-card">
+                  <h3>5+</h3>
+                  <p>Sertifikat</p>
+                </div>
+                <div className="stat-card">
+                  <h3>2+</h3>
+                  <p>Pengalaman</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card">
+              <p className="section-subtitle">Pendidikan & Pengalaman</p>
+              <div className="mt-6 space-y-5">
+                <div className="timeline-card">
+                  <span>2023 - Sekarang</span>
+                  <h3>Politeknik Negeri Malang</h3>
+                  <p>D-IV Sistem Informasi Bisnis</p>
+                </div>
+                <div className="timeline-card">
+                  <span>2020 - 2023</span>
+                  <h3>SMKN 1 Wonorejo</h3>
+                  <p>Teknik Komputer dan Jaringan</p>
+                </div>
+                <div className="timeline-card">
+                  <span>2022</span>
+                  <h3>Praktik Kerja Industri</h3>
+                  <p>Universitas Yudharta Pasuruan</p>
+                </div>
+                <div className="timeline-card">
+                  <span>2021 - 2022</span>
+                  <h3>On Job Training</h3>
+                  <p>CV Planet Solusindo Pasuruan</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb:4" div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Tools yang di pakai</h1>
-          <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50" div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
-            Berikut ini beberapa tools yang biasa saya pakai untuk pembuatan
-            website ataupun design
-          </p>
+      <section id="skills" className="section-padding">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <p className="section-subtitle">Tools & Skills</p>
+            <h2 className="section-title">
+              Teknologi yang <span className="gradient-text">Saya Gunakan</span>
+            </h2>
+          </div>
 
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-            {listTools.map((tool) => (
-              <div
-                className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group"
-                key={tool.id} div data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {listTools.map((tool) => {
+              const Icon = tool.icon;
+              return (
+                <div key={tool.name} className="tool-card">
+                  <Icon className="text-4xl text-cyan-400" />
+                  <div>
+                    <h3>{tool.name}</h3>
+                    <p>{tool.category}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="sertifikat" className="section-padding">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <p className="section-subtitle">Sertifikat</p>
+            <h2 className="section-title">
+              Sertifikat & <span className="gradient-text">Pencapaian</span>
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {listSertifikat.map((item) => (
+              <a
+                key={item.title}
+                href={item.image}
+                target="_blank"
+                rel="noreferrer"
+                className="project-card group"
+              >
                 <img
-                  src={tool.gambar}
-                  alt="Tools Image"
-                  className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"
+                  src={item.image}
+                  alt={item.title}
+                  className="h-56 w-full rounded-2xl object-cover"
                 />
-                <div>
-                  <h4 className="font-bold">{tool.nama}</h4>
-                  <p className="opacity-50">{tool.ket}</p>
+                <div className="p-5">
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-cyan-400">
+                    Lihat Sertifikat →
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="proyek" className="section-padding">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <p className="section-subtitle">Portfolio Project</p>
+            <h2 className="section-title">
+              Project yang <span className="gradient-text">Saya Kerjakan</span>
+            </h2>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {listProyek.map((project) => (
+              <div key={project.title} className="project-card">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-72 w-full rounded-2xl object-cover"
+                />
+
+                <div className="p-5">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span key={tech} className="tech-badge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-violet-600 px-5 py-3 text-sm font-semibold text-white"
+                  >
+                    <FaGithub /> Lihat GitHub
+                  </a>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-      {/* Tentang Saya */}
+      </section>
 
-      {/* Proyek */}
-      <div className="proyek mt-32 py-10" id="proyek">
-        <h1 className="text-center text-4xl font-bold mb-2" div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Proyek</h1>
-        <p className="text-base/loose text-center opacity-50" div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
-          Berikut ini beberapa proyek yang telah saya kerjakan:
-        </p>
-
-        <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-          {listProyek.map((proyek) => (
-            <div key={proyek.id} className="pd-4 bg-zinc-800 rounded-md"  div data-aos="fade-up" data-aos-duration="1000" data-aos-delay={proyek.dad} data-aos-once="true">
-              <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
+      <section id="kontak" className="section-padding">
+        <div className="container">
+          <div className="glass-card">
+            <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2">
-                  {proyek.tools.map((tool, index) => (
-                    <p className="py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold" key={index}>{tool}</p>
-                  ))}
-                </div>
-                <div className="mt-8 text-center">
-                  <a className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600" href="#">Lihat Website</a>
+                <p className="section-subtitle">Kontak</p>
+                <h2 className="section-title">
+                  Mari <span className="gradient-text">Terhubung</span>
+                </h2>
+                <p className="mt-5 leading-8 text-slate-300">
+                  Jika ingin berdiskusi, bekerja sama, atau melihat project saya
+                  lebih lanjut, silakan hubungi saya melalui email atau social
+                  media.
+                </p>
+
+                <a
+                  href="mailto:bhimantara.bhima21@gmail.com"
+                  className="mt-8 inline-flex items-center gap-3 text-cyan-400"
+                >
+                  <FaEnvelope /> bhimantara.bhima21@gmail.com
+                </a>
+
+                <div className="mt-6 flex gap-3">
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg transition hover:text-cyan-400"
+                      >
+                        <Icon />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
+
+              <form className="space-y-4">
+                <input className="form-input" type="text" placeholder="Nama Lengkap" />
+                <input className="form-input" type="email" placeholder="Email" />
+                <textarea className="form-input min-h-36" placeholder="Pesan"></textarea>
+                <button type="button" className="btn-primary w-full justify-center">
+                  Kirim Pesan
+                </button>
+              </form>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      {/* Proyek */}
-
-     {/* Kontak */}
-<div className="kontak mt-32 sm:p-10 p-0" id="kontak">
-  <h1 className="text-4xl mb-2 font-bold text-center" div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Kontak</h1>
-  <p className="text-base/loose text-center mb-10 opacity-50" div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-    Mari terhubung dengan saya.
-  </p>
-  <form
-    action="https://formsubmit.co/bhimantarapolinema@gmail.com"
-    method="POST"
-    className="bg-zinc-800 p-10 sm:w-fit w-full mx-auto rounded-md"
-    autoComplete="off" div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true"
-  >
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        <label className="font-semibold">Nama Lengkap</label>
-        <input
-          type="text"
-          name="nama"
-          placeholder="Masukkan Nama..."
-          className="border border-zinc-500 p-2 rounded-md"
-          required
-        />
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <label className="font-semibold">Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Masukkan Email"
-          className="border border-zinc-500 p-2 rounded-md"
-          required
-        />
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <label htmlFor="pesan" className="font-semibold">
-          Pesan
-        </label>
-        <textarea
-          name="pesan"
-          id="pesan"
-          cols="45"
-          rows="7"
-          placeholder="Pesan..."
-          className="border border-zinc-500 p-2 rounded-md"
-          required
-        ></textarea>
-      </div>
-
-      <div className="text-center">
-        <button
-          type="submit"
-          className="bg-violet-700 p-3 rounded-lg w-full cursor-pointer border border-zinc-600 hover:bg-violet-600"
-        >
-          Kirim Pesan
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
-{/* Kontak */}
-
-    </>
+      </section>
+    </main>
   );
-}
+};
 
 export default App;
+

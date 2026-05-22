@@ -1,157 +1,131 @@
-import HeroImage from "/assets/hero-img.webp";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGithub,
+  FaInstagram,
+  FaYoutube,
+  FaTiktok,
+  FaFigma,
+  FaBootstrap,
+  FaNodeJs,
+  FaPenNib,
+} from "react-icons/fa";
 
-const Image = {
-  HeroImage,
-};
+import {
+  SiTailwindcss,
+  SiVite,
+  SiLaravel,
+  SiPhp,
+  SiMysql,
+  SiFirebase,
+  SiFlutter,
+  SiLivewire,
+  SiCanva,
+} from "react-icons/si";
 
-export default Image;
-
-import Tools1 from "/assets/tools/vscode.png";
-import Tools2 from "/assets/tools/reactjs.png";
-import Tools3 from "/assets/tools/nextjs.png";
-import Tools4 from "/assets/tools/tailwind.png";
-import Tools5 from "/assets/tools/bootstrap.png";
-import Tools6 from "/assets/tools/js.png";
-import Tools7 from "/assets/tools/nodejs.png";
-import Tools8 from "/assets/tools/github.png";
-import Tools9 from "/assets/tools/ai.png";
-import Tools10 from "/assets/tools/canva.png";
-import Tools11 from "/assets/tools/figma.png";
-
-export const listTools = [
+export const socialLinks = [
   {
-    id: 1,
-    gambar: Tools1,
-    nama: "Visual Studio Code",
-    ket: "Code Editor",
-    dad: "100",
+    name: "GitHub",
+    url: "https://github.com/bhimantara435",
+    icon: FaGithub,
   },
   {
-    id: 2,
-    gambar: Tools2,
-    nama: "React JS",
-    ket: "Framework",
-    dad: "200",
+    name: "Instagram",
+    url: "https://www.instagram.com/bmntra.wep/",
+    icon: FaInstagram,
   },
   {
-    id: 3,
-    gambar: Tools3,
-    nama: "Next JS",
-    ket: "Framework",
-    dad: "300",
+    name: "TikTok",
+    url: "https://www.tiktok.com/@bmntra.wep",
+    icon: FaTiktok,
   },
   {
-    id: 4,
-    gambar: Tools4,
-    nama: "Tailwind CSS",
-    ket: "Framework",
-    dad: "400",
-  },
-  {
-    id: 5,
-    gambar: Tools5,
-    nama: "Bootstrap",
-    ket: "Framework",
-    dad: "500",
-  },
-  {
-    id: 6,
-    gambar: Tools6,
-    nama: "Javascript",
-    ket: "Language",
-    dad: "600",
-  },
-  {
-    id: 7,
-    gambar: Tools7,
-    nama: "Node JS",
-    ket: "Javascript Runtime",
-    dad: "700",
-  },
-  {
-    id: 8,
-    gambar: Tools8,
-    nama: "Github",
-    ket: "Repository",
-    dad: "800",
-  },
-  {
-    id: 9,
-    gambar: Tools9,
-    nama: "Adobe Illustrator",
-    ket: "Design App",
-    dad: "900",
-  },
-  {
-    id: 10,
-    gambar: Tools10,
-    nama: "Canva",
-    ket: "Design App",
-    dad: "1000",
-  },
-  {
-    id: 11,
-    gambar: Tools11,
-    nama: "Figma",
-    ket: "Design App",
-    dad: "1100",
+    name: "YouTube",
+    url: "https://www.youtube.com/@smoky404-6",
+    icon: FaYoutube,
   },
 ];
 
-import Proyek1 from "/assets/proyek/proyek1.webp";
-import Proyek2 from "/assets/proyek/proyek2.webp";
-import Proyek3 from "/assets/proyek/proyek3.webp";
-import Proyek4 from "/assets/proyek/proyek4.webp";
-import Proyek5 from "/assets/proyek/proyek5.webp";
-import Proyek6 from "/assets/proyek/proyek6.webp";
+export const listTools = [
+  { name: "HTML", category: "Frontend", icon: FaHtml5 },
+  { name: "CSS", category: "Frontend", icon: FaCss3Alt },
+  { name: "JavaScript", category: "Language", icon: FaJs },
+  { name: "React JS", category: "Frontend", icon: FaReact },
+  { name: "Tailwind CSS", category: "Framework", icon: SiTailwindcss },
+  { name: "Vite", category: "Build Tool", icon: SiVite },
+  { name: "Laravel", category: "Backend", icon: SiLaravel },
+  { name: "PHP", category: "Language", icon: SiPhp },
+  { name: "MySQL", category: "Database", icon: SiMysql },
+  { name: "Firebase", category: "Database", icon: SiFirebase },
+  { name: "Flutter", category: "Mobile", icon: SiFlutter },
+  { name: "Bootstrap", category: "Framework", icon: FaBootstrap },
+  { name: "Node JS", category: "Runtime", icon: FaNodeJs },
+  { name: "Figma", category: "Design", icon: FaFigma },
+  { name: "Canva", category: "Design", icon: SiCanva },
+  { name: "Adobe Illustrator", category: "Design", icon: FaPenNib },
+];
 
 export const listProyek = [
   {
-    id: 1,
-    gambar: Proyek1,
-    nama: "Website Sekolah",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS"],
-    dad: "200",
+    title: "Prestasi Mahasiswa",
+    image: "/assets/poster_prestasi_mahasiswa.png",
+    description:
+      "Website pengelolaan prestasi, kompetisi, sertifikat, dan data mahasiswa dengan dashboard admin.",
+    tech: ["PHP", "MySQL", "Bootstrap", "Admin Panel"],
+    github: "https://github.com/atslhamny/PBL-PRESTASI-MAHASISWA",
   },
   {
-    id: 2,
-    gambar: Proyek2,
-    nama: "Company Profile",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "AOS", "Swiper", "Lightbox Gallery"],
-    dad: "300",
+    title: "MindCheck",
+    image: "/assets/poster_website_screening_kesehatan_mental.png",
+    description:
+      "Website screening kesehatan mental berbasis Laravel dengan fitur screening, dashboard, CRUD, dan riwayat.",
+    tech: ["Laravel", "PHP", "Vite", "Tailwind CSS", "MySQL"],
+    github: "https://github.com/aldofebryn/pblmindcheck",
   },
   {
-    id: 3,
-    gambar: Proyek3,
-    nama: "Web Pernikahan 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "TailwindCSS", "AOS"],
-    dad: "400",
+    title: "SIMPEL Peminjaman Lab",
+    image: "/assets/poster_mobile_apps_peminjaman_lab_revisi.png",
+    description:
+      "Aplikasi mobile peminjaman laboratorium untuk mahasiswa, admin, dan aslab dengan status real-time.",
+    tech: ["Flutter", "Firebase", "Firestore", "Auth"],
+    github: "https://github.com/septyandini921/pbl_peminjaman_lab",
   },
   {
-    id: 4,
-    gambar: Proyek4,
-    nama: "Website Course",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
-    dad: "500",
+    title: "Website Pendaftaran TOEIC",
+    image: "/assets/poster_website_pendaftaran_toeic.png",
+    description:
+      "Website pendaftaran ujian TOEIC berbasis Laravel untuk mahasiswa dan admin dengan fitur approval peserta.",
+    tech: ["Laravel", "PHP", "Livewire", "Excel Import"],
+    github: "https://github.com/igaramadana/PWL_PBL_TOEIC",
+  },
+];
+
+export const listSertifikat = [
+  {
+    title: "Sertifikat Kompetensi BNSP",
+    subtitle: "Teknisi Jaringan dan Sistem Komputer",
+    image: "/assets/Sertifikat Teknisi Jaringan dan Sistem Komputer (2).jpg",
   },
   {
-    id: 5,
-    gambar: Proyek5,
-    nama: "Web Portfolio",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
-    dad: "600",
+    title: "Sertifikat PECT",
+    subtitle: "Polytechnic English Competence Test",
+    image: "/assets/Sertifikat PECT Bhimantara (1).jpg",
   },
   {
-    id: 6,
-    gambar: Proyek6,
-    nama: "Company Profile 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
-    dad: "700",
+    title: "Latihan Dasar Kedisiplinan",
+    subtitle: "LDK Mahasiswa Baru",
+    image: "/assets/Sertifikat Latihan Dasar Kedisiplinan Bhimantara (1).jpg",
+  },
+  {
+    title: "On Job Training",
+    subtitle: "Planet Computer / CV Planet Solusindo",
+    image: "/assets/Sertifikat On Job Training (2).jpg",
+  },
+  {
+    title: "Praktik Kerja Industri",
+    subtitle: "Universitas Yudharta Pasuruan",
+    image: "/assets/Sertifikat Praktik Kerja Industri (2).jpg",
   },
 ];

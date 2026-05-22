@@ -1,30 +1,36 @@
+import { socialLinks } from "../data";
+
 const Footer = () => {
-return (
-    <div className="mt-32 py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
-    <h1 className="text-2xl font-bold">Portofolio</h1>
+    return (
+        <footer className="border-t border-white/10 bg-[#050816] py-8 text-white">
+            <div className="container flex flex-col items-center justify-between gap-5 md:flex-row">
+                <h2 className="text-xl font-bold">
+                    Bhimantara<span className="text-cyan-400">.</span>
+                </h2>
 
-    <div className="flex gap-7">
-        <a href="#beranda">Beranda</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#proyek">Proyek</a>
-    </div>
+                <p className="text-sm text-slate-400">
+                    © 2026 Muhammad Bhimantara Wira Eka Putra. All rights reserved.
+                </p>
 
-    <div className="flex items-center gap-3">
-        <a href="#">
-        <i className="ri-github-fill ri-2x"></i>
-        </a>
-        <a href="#">
-        <i className="ri-instagram-fill ri-2x"></i>
-        </a>
-        <a href="#">
-        <i className="ri-tiktok-fill ri-2x"></i>
-        </a>
-        <a href="#">
-        <i className="ri-youtube-fill ri-2x"></i>
-        </a>
-    </div>
-    </div>
-);
+                <div className="flex gap-3">
+                    {socialLinks.map((social) => {
+                        const Icon = social.icon;
+                        return (
+                            <a
+                                key={social.name}
+                                href={social.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:text-cyan-400"
+                            >
+                                <Icon />
+                            </a>
+                        );
+                    })}
+                </div>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;
