@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar py-7 flex items-center justify-between">
+    <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[#050816]/80 px-6 py-4 backdrop-blur-xl md:px-8">
       <div className="logo">
         <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
           Portofolio
