@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import App from "./App.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import Preloader from "./components/Preloader.jsx";
-
+import Preloader from "./components/PreLoader.jsx";
 const Root = () => {
   const [loading, setLoading] = useState(true);
 
