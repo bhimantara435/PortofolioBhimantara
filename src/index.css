@@ -217,34 +217,29 @@ body {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  animation: revealUp 0.8s ease forwards;
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: opacity 0.8s ease, transform 0.8s ease !important;
+  will-change: opacity, transform;
 }
 
-.delay-1 {
-  animation-delay: 0.15s;
+.reveal.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-.delay-2 {
-  animation-delay: 0.3s;
+.reveal-delay-1 {
+  transition-delay: 0.1s !important;
 }
 
-.delay-3 {
-  animation-delay: 0.45s;
+.reveal-delay-2 {
+  transition-delay: 0.2s !important;
 }
 
-.delay-4 {
-  animation-delay: 0.6s;
+.reveal-delay-3 {
+  transition-delay: 0.3s !important;
 }
 
-.delay-5 {
-  animation-delay: 0.75s;
-}
-
-@keyframes revealUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.reveal-delay-4 {
+  transition-delay: 0.4s !important;
 }

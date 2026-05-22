@@ -1,15 +1,39 @@
+import { useEffect } from "react";
 import { FaArrowRight, FaDownload, FaEnvelope, FaGithub } from "react-icons/fa";
 import { listProyek, listSertifikat, listTools, socialLinks } from "./data";
 
 const App = () => {
+useEffect(() => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    }
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect();
+}, []);
+
   return (
     <main className="overflow-hidden bg-[#050816] text-white">
       <section id="beranda" className="section-padding pt-36">
         <div className="container">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
+            <div className="reveal reveal-delay-1">
               <div className="mb-6 flex gap-3">
-                {socialLinks.map((social) => {
+                {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
                     <a
@@ -17,7 +41,7 @@ const App = () => {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400"
+                      className={`reveal reveal-delay-${(index % 4) + 1} grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg text-white transition hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-400`}
                     >
                       <Icon />
                     </a>
@@ -57,7 +81,7 @@ const App = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative reveal reveal-delay-2">
               <div className="absolute -inset-6 rounded-full bg-cyan-500/20 blur-3xl"></div>
               <div className="relative rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl">
                 <img
@@ -74,7 +98,7 @@ const App = () => {
       <section id="tentang" className="section-padding">
         <div className="container">
           <div className="grid gap-6 lg:grid-cols-2">
-            <div className="glass-card">
+            <div className="glass-card reveal reveal-delay-1">
               <p className="section-subtitle">Tentang Saya</p>
               <h2 className="section-title">
                 Mengenal <span className="gradient-text">Bhimantara</span>
@@ -88,44 +112,22 @@ const App = () => {
               </p>
 
               <div className="mt-8 grid grid-cols-3 gap-4">
-                <div className="stat-card">
-                  <h3>4+</h3>
-                  <p>Project</p>
-                </div>
-                <div className="stat-card">
-                  <h3>5+</h3>
-                  <p>Sertifikat</p>
-                </div>
-                <div className="stat-card">
-                  <h3>2+</h3>
-                  <p>Pengalaman</p>
-                </div>
+                <div className="stat-card"> <h3>4+</h3> <p>Project</p> </div>
+                <div className="stat-card"> <h3>5+</h3> <p>Sertifikat</p> </div>
+                <div className="stat-card"> <h3>2+</h3> <p>Pengalaman</p> </div>
               </div>
             </div>
 
-            <div className="glass-card">
+            <div className="glass-card reveal reveal-delay-2">
               <p className="section-subtitle">Pendidikan & Pengalaman</p>
               <div className="mt-6 space-y-5">
-                <div className="timeline-card">
-                  <span>2023 - Sekarang</span>
-                  <h3>Politeknik Negeri Malang</h3>
-                  <p>D-IV Sistem Informasi Bisnis</p>
-                </div>
-                <div className="timeline-card">
-                  <span>2020 - 2023</span>
-                  <h3>SMKN 1 Wonorejo</h3>
-                  <p>Teknik Komputer dan Jaringan</p>
-                </div>
-                <div className="timeline-card">
-                  <span>2022</span>
-                  <h3>Praktik Kerja Industri</h3>
-                  <p>Universitas Yudharta Pasuruan</p>
-                </div>
-                <div className="timeline-card">
-                  <span>2021 - 2022</span>
-                  <h3>On Job Training</h3>
-                  <p>CV Planet Solusindo Pasuruan</p>
-                </div>
+                {["Politeknik Negeri Malang", "SMKN 1 Wonorejo", "Praktik Kerja Industri", "On Job Training"].map((title, index) => (
+                  <div key={title} className={`timeline-card reveal reveal-delay-${(index % 4) + 1}`}>
+                    <span>{["2023 - Sekarang", "2020 - 2023", "2022", "2021 - 2022"][index]}</span>
+                    <h3>{title}</h3>
+                    <p>{["D-IV Sistem Informasi Bisnis", "Teknik Komputer dan Jaringan", "Universitas Yudharta Pasuruan", "CV Planet Solusindo Pasuruan"][index]}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -134,7 +136,7 @@ const App = () => {
 
       <section id="skills" className="section-padding">
         <div className="container">
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-center reveal">
             <p className="section-subtitle">Tools & Skills</p>
             <h2 className="section-title">
               Teknologi yang <span className="gradient-text">Saya Gunakan</span>
@@ -142,10 +144,10 @@ const App = () => {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {listTools.map((tool) => {
+            {listTools.map((tool, index) => {
               const Icon = tool.icon;
               return (
-                <div key={tool.name} className="tool-card">
+                <div key={tool.name} className={`tool-card reveal reveal-delay-${(index % 4) + 1}`}>
                   <Icon className="text-4xl text-cyan-400" />
                   <div>
                     <h3>{tool.name}</h3>
@@ -160,7 +162,7 @@ const App = () => {
 
       <section id="sertifikat" className="section-padding">
         <div className="container">
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-center reveal">
             <p className="section-subtitle">Sertifikat</p>
             <h2 className="section-title">
               Sertifikat & <span className="gradient-text">Pencapaian</span>
@@ -168,19 +170,15 @@ const App = () => {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {listSertifikat.map((item) => (
+            {listSertifikat.map((item, index) => (
               <a
                 key={item.title}
                 href={item.image}
                 target="_blank"
                 rel="noreferrer"
-                className="project-card group"
+                className={`project-card group reveal reveal-delay-${(index % 4) + 1}`}
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-56 w-full rounded-2xl object-cover"
-                />
+                <img src={item.image} alt={item.title} className="h-56 w-full rounded-2xl object-cover" />
                 <div className="p-5">
                   <h3>{item.title}</h3>
                   <p>{item.subtitle}</p>
@@ -196,7 +194,7 @@ const App = () => {
 
       <section id="proyek" className="section-padding">
         <div className="container">
-          <div className="mb-10 text-center">
+          <div className="mb-10 text-center reveal">
             <p className="section-subtitle">Portfolio Project</p>
             <h2 className="section-title">
               Project yang <span className="gradient-text">Saya Kerjakan</span>
@@ -204,13 +202,9 @@ const App = () => {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            {listProyek.map((project) => (
-              <div key={project.title} className="project-card">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-72 w-full rounded-2xl object-cover"
-                />
+            {listProyek.map((project, index) => (
+              <div key={project.title} className={`project-card reveal reveal-delay-${(index % 4) + 1}`}>
+                <img src={project.image} alt={project.title} className="h-72 w-full rounded-2xl object-cover" />
 
                 <div className="p-5">
                   <h3>{project.title}</h3>
@@ -218,9 +212,7 @@ const App = () => {
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
-                      <span key={tech} className="tech-badge">
-                        {tech}
-                      </span>
+                      <span key={tech} className="tech-badge">{tech}</span>
                     ))}
                   </div>
 
@@ -241,7 +233,7 @@ const App = () => {
 
       <section id="kontak" className="section-padding">
         <div className="container">
-          <div className="glass-card">
+          <div className="glass-card reveal">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
                 <p className="section-subtitle">Kontak</p>
@@ -254,29 +246,9 @@ const App = () => {
                   media.
                 </p>
 
-                <a
-                  href="mailto:bhimantarapolinema@gmail.com"
-                  className="mt-8 inline-flex items-center gap-3 text-cyan-400"
-                >
+                <a href="mailto:bhimantarapolinema@gmail.com" className="mt-8 inline-flex items-center gap-3 text-cyan-400">
                   <FaEnvelope /> bhimantarapolinema@gmail.com
                 </a>
-
-                <div className="mt-6 flex gap-3">
-                  {socialLinks.map((social) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg transition hover:text-cyan-400"
-                      >
-                        <Icon />
-                      </a>
-                    );
-                  })}
-                </div>
               </div>
 
               <form className="space-y-4">
@@ -296,4 +268,3 @@ const App = () => {
 };
 
 export default App;
-
