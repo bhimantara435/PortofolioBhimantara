@@ -9,7 +9,7 @@ const Preloader = () => {
             BHIMANTARA
           </h1>
           <p className="mt-5 text-sm font-medium tracking-wide text-slate-400">
-            Loading Portfolio...
+            Loading Portofolio...
           </p>
         </div>
       </div>
