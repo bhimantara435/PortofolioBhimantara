@@ -9,7 +9,7 @@ const Footer = () => {
                 </h2>
 
                 <p className="text-sm text-slate-400">
-                    © 2026 Muhammad Bhimantara Wira Eka Putra. All rights reserved.
+                    © 2026 Muhammad Bhimantara Wira Eka Putra.
                 </p>
 
                 <div className="flex gap-3">
