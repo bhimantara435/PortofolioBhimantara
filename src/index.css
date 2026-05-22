@@ -243,3 +243,74 @@ body {
 .reveal-delay-4 {
   transition-delay: 0.4s !important;
 }
+
+.light body {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.light main {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.light .glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(226, 232, 240, 0.8)
+  );
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 25px 80px rgba(15, 23, 42, 0.08);
+}
+
+.light .stat-card,
+.light .tool-card,
+.light .project-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.light .form-input {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+.light .form-input::placeholder {
+  color: #64748b;
+}
+
+.light .btn-secondary {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-slate-300 {
+  color: #475569 !important;
+}
+
+.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+.light .bg-\[\#050816\]\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+.light .menu {
+  color: #0f172a;
+}

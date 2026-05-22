@@ -38,7 +38,7 @@ const App = () => {
   }, []);
 
   return (
-    <main className="overflow-hidden bg-[#050816] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#050816] text-white transition-colors duration-300 light:bg-slate-100 light:text-slate-900">
       {toast && (
         <div className="fixed right-5 top-5 z-[9999] w-[90%] max-w-sm rounded-2xl border border-white/10 bg-slate-900/95 px-5 py-4 text-white shadow-2xl shadow-cyan-500/20 backdrop-blur-xl">
           <p
