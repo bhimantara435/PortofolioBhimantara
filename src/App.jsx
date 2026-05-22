@@ -255,10 +255,10 @@ const App = () => {
                 </p>
 
                 <a
-                  href="mailto:bhimantara.bhima21@gmail.com"
+                  href="mailto:bhimantarapolinema@gmail.com"
                   className="mt-8 inline-flex items-center gap-3 text-cyan-400"
                 >
-                  <FaEnvelope /> bhimantara.bhima21@gmail.com
+                  <FaEnvelope /> bhimantarapolinema@gmail.com
                 </a>
 
                 <div className="mt-6 flex gap-3">
