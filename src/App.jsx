@@ -146,7 +146,7 @@ const App = () => {
                   <p>Project</p>
                 </div>
                 <div className="stat-card">
-                  <h3>5+</h3>
+                  <h3>6+</h3>
                   <p>Sertifikat</p>
                 </div>
                 <div className="stat-card">

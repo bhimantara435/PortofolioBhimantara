@@ -128,4 +128,9 @@ export const listSertifikat = [
     subtitle: "Universitas Yudharta Pasuruan",
     image: "/assets/Sertifikat Praktik Kerja Industri (2).jpg",
   },
+  {
+    title: "Sertifikat-Generasi Terkoneksi (GENsi)",
+    subtitle: "Generasi Terkoneksi",
+    image: "/assets/Sertifikat-Generasi Terkoneksi (GENsi).png",
+  },
 ];
