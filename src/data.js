@@ -137,6 +137,6 @@ export const listSertifikat = [
   {
   title: "Workshop Cyber Security",
   subtitle: 'Cyber Security "Think Before You Click"',
-  image: "/assets/Sertifikat - __Nama__.png",
+  image: "/assets/sertifikat-workshop-cysec.png",
   },
 ];
