@@ -133,4 +133,10 @@ export const listSertifikat = [
     subtitle: "Generasi Terkoneksi",
     image: "/assets/Sertifikat-Generasi Terkoneksi (GENsi).png",
   },
+
+  {
+  title: "Workshop Cyber Security",
+  subtitle: 'Cyber Security "Think Before You Click"',
+  image: "/assets/Sertifikat - __Nama__.png",
+  },
 ];
